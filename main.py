@@ -24,7 +24,7 @@ logger.addHandler(handler)
 
 @bot.event
 async def on_ready():
-    print('Bot ready')
+    print('Bot brondo, evviva tutti quanti')
 
 @bot.event
 async def on_message(message):
@@ -32,43 +32,33 @@ async def on_message(message):
         return
     await bot.process_commands(message)
 
-@bot.command(pass_context=True, aliases=['orso','Orso'])
+@bot.command(pass_context=True, aliases=['gerry','Gerry'])
 async def cmd1(ctx):
-    orso1 = random.randint(1,8)
-    orso2 = str(orso1)
-    embed1 = discord.Embed(title="Ecco un orso a caso (Orso numero " + orso2 + ")")
-    embed1.set_image(url="https://raw.githubusercontent.com/Fredbear07/Bears/main/Bears/Bear" + orso2 + ".png")
+    gerry1 = random.randint(1,8)
+    gerry2 = str(gerry1)
+    embed1 = discord.Embed(title="Ecco una foto di Gerry a caso (Gerry numero " + gerry2 + ")")
+    embed1.set_image(url="https://raw.githubusercontent.com/e-splat/StorageImmagini/main/Gerry/Scotti/" + gerry2 + ".png")
     await ctx.send(embed=embed1)
 
 @slash.slash(
-    name="Orso",
-    description="8 Foto di orsi casuali",
-    guild_ids=[961643863615893514]    
+    name="gerry",
+    description="8 Foto di Gerry totalmente a caso",
+    guild_ids=[955181531779985458]    
 )    
-async def _orso(ctx: SlashContext):
-    orso1 = random.randint(1,8)
-    orso2 = str(orso1)
-    embed1 = discord.Embed(title="Ecco un orso a caso (Orso numero " + orso2 + ")")
-    embed1.set_image(url="https://raw.githubusercontent.com/Fredbear07/Bears/main/Bears/Bear" + orso2 + ".png")
+async def _gerry(ctx: SlashContext):
+    gerry1 = random.randint(1,8)
+    gerry2 = str(gerry1)
+    embed1 = discord.Embed(title="Ecco una foto di Gerry a caso (Gerry numero " + gerry2 + ")")
+    embed1.set_image(url="https://raw.githubusercontent.com/e-splat/StorageImmagini/main/Gerry/Scotti/" + gerry2 + ".png")
     await ctx.send(embed=embed1)
     
 @slash.slash(
     name="Github",
-    description="Codice sorgente e repo del bot",
-    guild_ids=[961643863615893514]    
+    description="Codice sorgente e repo del bot (Forckalo tutto eh)",
+    guild_ids=[955181531779985458]    
 )    
-async def _orso(ctx: SlashContext):
-    await ctx.send("https://github.com/Fredbear07/BearBot")
+async def _gerry(ctx: SlashContext):
+    await ctx.send("https://github.com/e-splat/GerroneBot")
 
-@slash.slash(
-    name="?",
-    description="Le Info Del Server",
-    guild_ids=[961643863615893514]    
-)    
-async def _orso(ctx: SlashContext):
-    embed1 = discord.Embed(title="")
-    embed1.set_image(url="https://raw.githubusercontent.com/Fredbear07/Bears/main/Bears/Bear" + orso2 + ".png")
-    await ctx.send(embed=embed1)
-    await ctx.send("https://github.com/Fredbear07/BearBot")
 
 bot.run(Ds_Token)
